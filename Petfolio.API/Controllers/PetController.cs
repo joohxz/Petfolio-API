@@ -13,6 +13,7 @@ namespace Petfolio.API.Controllers
     {
         [HttpPost]
         [ProducesResponseType(typeof(ResponsePetRegisteredJson), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
         public IActionResult RegisterPet([FromBody] RequestRegisterPetJson request)
         {
             var response = new RegisterPetUseCase().Execute(request);
